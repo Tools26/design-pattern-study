@@ -66,19 +66,19 @@ protocol WeaponStrategy {
   func fight()
 }
 
-struct SwordStrategy: WeaponStrategy {
+class SwordStrategy: WeaponStrategy {
   func fight() {
     print("검으로 싸웁니다.")
   }
 }
 
-struct AxeStrategy: WeaponStrategy {
+class AxeStrategy: WeaponStrategy {
   func fight() {
     print("도끼로 싸웁니다.")
   }
 }
 
-struct KnifeStrategy: WeaponStrategy {
+class KnifeStrategy: WeaponStrategy {
   func fight() {
     print("단검으로 싸웁니다.")
   }
@@ -114,8 +114,7 @@ warrior.setStrategy(strategy: AxeStrategy())
 warrior.fight()
 
 // 활를 추가하려면 WeaponStrategy 프로토콜을 채택하는 활 전략를 만들면된다.
-
-struct BowStrategy: WeaponStrategy {
+class BowStrategy: WeaponStrategy {
   func fight() {
     print("활로 싸웁니다.")
   }
