@@ -27,11 +27,12 @@ public class Lecture implements Professor {
     @Override
     public void notify(String msg) {
         enrollStudent.forEach(s -> s.updateNotice(msg));
-    }
+    } // attention
 
     @Override
     public void cancelNotify() {
         enrollStudent.forEach(s -> s.deleteNotice());
+    } // attention
     }
 
     @Override
