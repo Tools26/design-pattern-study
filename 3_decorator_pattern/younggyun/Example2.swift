@@ -96,10 +96,18 @@ class Bulgogi: IngredientDecorator {
     }
 }
 
-var mayo = Bulgogi(Tuna(Spam(BarleyRice())))
+var mayo: Rice = Tuna(Spam(BarleyRice()))
 print("메뉴: ", mayo.getName() + "마요")
 print("가격: ", mayo.cost())
 
-var mayo2 = Chicken(Spam(BrownRice()))
+mayo = Bulgogi(mayo)
+print("메뉴: ", mayo.getName() + "마요")
+print("가격: ", mayo.cost())
+
+mayo = Spam(mayo)
+print("메뉴: ", mayo.getName() + "마요")
+print("가격: ", mayo.cost())
+
+var mayo2: Rice = Chicken(Spam(BrownRice()))
 print("메뉴: ", mayo2.getName() + "마요")
 print("가격: ", mayo2.cost())
