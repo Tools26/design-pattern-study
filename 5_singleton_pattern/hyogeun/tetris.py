@@ -1,4 +1,4 @@
-from model import KeyboardListener
+from listener import KeyboardListener
 
 class BaseModel:
     def __init__(self):
