@@ -1,7 +1,6 @@
 from abc import ABCMeta, abstractmethod
 
 class Sandwich(object):
-    __metaclass__ = ABCMeta
     def __init__(self):
         self.sandwitch_info = ""
         

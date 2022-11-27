@@ -17,10 +17,7 @@ class CreateFileFactory(FileFactory):
     }
     def createFile(self, filename):
         try:
-            c = getattr(sys.modules['sourceCode'], self.extMap[os.path.splitext(filename)[-1]]+"File")(filename)
+            c = getattr(sys.modules['fileClass'], self.extMap[os.path.splitext(filename)[-1]]+"File")(filename)
         except:
             c = fileClass.TextFile(filename)
         return c
-        
-        
-    

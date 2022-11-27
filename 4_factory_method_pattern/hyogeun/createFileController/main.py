@@ -1,6 +1,5 @@
 from fileCreator import CreateFileFactory
 
-
 if __name__ == "__main__":
     factory = CreateFileFactory()
     pythonFile = factory.createFile("abc.py")
