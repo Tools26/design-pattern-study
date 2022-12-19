@@ -1,6 +1,6 @@
 package org.example;
 
-public class AudioPlayer {
+public class AudioPlayer implements MediaPlayer {
     AudioType audioType;
     String fileName;
 
