@@ -1,3 +1,5 @@
+package payment;
+
 import java.util.Optional;
 
 public abstract class AbstractPayMethod {
@@ -10,14 +12,16 @@ public abstract class AbstractPayMethod {
         return create(type);
     }
 
-    abstract boolean makeVisible();
-    abstract boolean makeEnable();
-    abstract boolean makeSelectable();
-    abstract boolean makeChecked();
-    abstract Optional<ViewType> create(boolean enable,
-                                       boolean visible,
-                                       boolean selectable,
-                                       boolean checked);
+    protected abstract boolean makeVisible();
+    protected abstract boolean makeEnable();
+    protected abstract boolean makeSelectable();
+    protected abstract boolean makeChecked();
+    protected abstract Optional<ViewType> create(boolean enable,
+                                                 boolean visible,
+                                                 boolean selectable,
+                                                 boolean checked);
+
+
     private PaymentView create(Optional<ViewType> payType) {
         if(payType.isPresent()) {
             ViewType type = payType.get();

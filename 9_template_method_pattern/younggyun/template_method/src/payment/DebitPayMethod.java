@@ -1,14 +1,16 @@
+package payment;
+
 import java.util.Optional;
 
-public class CreditCardPayMethod extends AbstractPayMethod {
+public class DebitPayMethod extends AbstractPayMethod {
     private final String accountId;
 
-    public CreditCardPayMethod(String accountId) {
+    public DebitPayMethod(String accountId) {
         this.accountId = accountId;
     }
 
     @Override
-    boolean makeVisible() {
+    protected boolean makeVisible() {
 //        if condition {
 //            return false;
 //        }
@@ -16,7 +18,7 @@ public class CreditCardPayMethod extends AbstractPayMethod {
     }
 
     @Override
-    boolean makeEnable() {
+    protected boolean makeEnable() {
 //        if condition {
 //            return false;
 //        }
@@ -24,7 +26,7 @@ public class CreditCardPayMethod extends AbstractPayMethod {
     }
 
     @Override
-    boolean makeSelectable() {
+    protected boolean makeSelectable() {
 //        if condition {
 //            return false;
 //        }
@@ -32,7 +34,7 @@ public class CreditCardPayMethod extends AbstractPayMethod {
     }
 
     @Override
-    boolean makeChecked() {
+    protected boolean makeChecked() {
 //        if condition {
 //            return false;
 //        }
@@ -40,9 +42,9 @@ public class CreditCardPayMethod extends AbstractPayMethod {
     }
 
     @Override
-    Optional<ViewType> create(boolean enable, boolean visible, boolean selectable, boolean checked) {
+    protected Optional<ViewType> create(boolean enable, boolean visible, boolean selectable, boolean checked) {
         if (enable && visible && selectable && checked) {
-            return Optional.of(ViewType.CREDIT_CARD);
+            return Optional.of(ViewType.DEBIT);
         }
         return Optional.of(ViewType.EMPTY);
     }
