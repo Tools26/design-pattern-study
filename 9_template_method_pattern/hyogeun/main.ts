@@ -1,9 +1,8 @@
-abstract class KyoChonChicken {
+abstract class MakeChicken {
   public makeChicken(): void {
     this.trimChicken();
     this.kneadChicken();
-    this.fryChicken();
-    this.sauceChicken();
+    this.cookChicken();
     this.complete();
   }
   private trimChicken(): void {
@@ -12,34 +11,31 @@ abstract class KyoChonChicken {
   private kneadChicken(): void {
     console.log("반죽을 합니다.");
   }
-  private fryChicken(): void {
-    console.log("닭을 튀깁니다.");
-  }
-  protected abstract sauceChicken(): void;
+  protected abstract cookChicken(): void;
   protected abstract complete(): void;
 }
 
-class Red extends KyoChonChicken {
-  protected sauceChicken(): void {
-    console.log("Add Red sauce");
+class KyoChonRedCombo extends MakeChicken {
+  protected cookChicken(): void {
+    console.log("Fry and Sauce chicken.");
   }
   protected complete(): void {
-    console.log("Red Chicken Complete!");
+    console.log("Red Combo Complete!");
   }
 }
 
-class Honey extends KyoChonChicken {
-  protected sauceChicken(): void {
-    console.log("Add Honey sauce");
+class GoobneBasasak extends MakeChicken {
+  protected cookChicken(): void {
+    console.log("Bake and Sauce Chicken.");
   }
   protected complete(): void {
-    console.log("Honey Chicken Complete!");
+    console.log("GoobneBasasak Complete!");
   }
 }
 
-const red = new Red();
-const honey = new Honey();
+const red = new KyoChonRedCombo();
+const basasak = new GoobneBasasak();
 
 red.makeChicken();
 console.log("--------------");
-honey.makeChicken();
+basasak.makeChicken();
