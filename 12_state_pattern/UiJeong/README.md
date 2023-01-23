@@ -18,5 +18,6 @@
 : exit - 그림을 저장하라는 경고문이 뜬다.               
 : paint - 상태변환 일어나지 않는다.         
 
+![image](https://user-images.githubusercontent.com/63052097/214029181-9b82ec87-2601-4f47-bc29-6256f5d52630.png)
 
 
